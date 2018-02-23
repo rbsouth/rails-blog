@@ -1,0 +1,23 @@
+New Project
+1 - $ rails new <name>
+2 - $ git acm "initial commit"
+3 - Github: Make a new repo called <name>
+    NO README.md!!!
+4 - $ git remote add origin <url>
+5 - $ git push -u origin master
+
+Controllers
+1 - $ rails g controller <name> <actions...>
+2 - in routes.rb: resources :<name>
+3 - Write your code in the controller actions
+
+Models
+1 - $ rails g model <singular name> <field1:type> <field2:type> etc.
+2 - Sublime: make sure your migration looks correct
+3 - $ rails db:migrate
+4 - In your model models/<singular name>.rb: add relationships (has_many, belongs_to, etc.)
+
+Migrations
+1 - $ rails g migration <descriptive name> <possible fields to add>
+2 - Sublime: check migration to make sure looks correct
+3 - $ rails db:migrate
