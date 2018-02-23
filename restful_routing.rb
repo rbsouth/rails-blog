@@ -1,3 +1,4 @@
+
 You don't have any routes defined!
 
 Please add some routes in config/routes.rb.
