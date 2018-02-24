@@ -1,2 +1,18 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<div class="row">
+	<div class="col-4 offset-4">
+		<div id="login-wrapper">
+			<h2 class="text-center">Log in</h2>
+			<% if flash[:alert] %>
+				<p class="alert alert-danger"> <%= flash[:alert] %> </p>
+			<% end %>
+			<%= form_with url: login_path, local: true do |f| %>
+				<%= f.label :email %>
+				<%= f.email_field :email, value: params[:email], placeholder: 'example@email.com', autofocus: true, class: 'form-control' %>
+				<%= f.label :password %>
+				<%= f.password_field :password, placeholder: raw("&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"), autofocus: true, class: 'form-control' %>
+				<%= f.submit class: 'btn btn-primary btn-raised login-button' %>
+			<% end %>
+			<%= link_to "Create Account", new_user_path %>
+		</div>
+	</div>
+</div>

@@ -1,25 +1,29 @@
-          Prefix Verb URI Pattern                 Controller#Action
-    sessions_new GET  /sessions/new(.:format)     sessions#new
- sessions_create GET  /sessions/create(.:format)  sessions#create
-sessions_destroy GET  /sessions/destroy(.:format) sessions#destroy
-  comments_index GET  /comments/index(.:format)   comments#index
-    comments_new GET  /comments/new(.:format)     comments#new
- comments_create GET  /comments/create(.:format)  comments#create
-   comments_show GET  /comments/show(.:format)    comments#show
-   comments_edit GET  /comments/edit(.:format)    comments#edit
- comments_update GET  /comments/update(.:format)  comments#update
-comments_destroy GET  /comments/destroy(.:format) comments#destroy
-     posts_index GET  /posts/index(.:format)      posts#index
-       posts_new GET  /posts/new(.:format)        posts#new
-    posts_create GET  /posts/create(.:format)     posts#create
-      posts_show GET  /posts/show(.:format)       posts#show
-      posts_edit GET  /posts/edit(.:format)       posts#edit
-    posts_update GET  /posts/update(.:format)     posts#update
-   posts_destroy GET  /posts/destroy(.:format)    posts#destroy
-     users_index GET  /users/index(.:format)      users#index
-       users_new GET  /users/new(.:format)        users#new
-    users_create GET  /users/create(.:format)     users#create
-      users_show GET  /users/show(.:format)       users#show
-      users_edit GET  /users/edit(.:format)       users#edit
-    users_update GET  /users/update(.:format)     users#update
-   users_destroy GET  /users/destroy(.:format)    users#destroy
+      Prefix Verb   URI Pattern                  Controller#Action
+  login_view GET    /login(.:format)             sessions#new
+       login POST   /login(.:format)             sessions#create
+      logout DELETE /logout(.:format)            sessions#destroy
+    comments GET    /comments(.:format)          comments#index
+             POST   /comments(.:format)          comments#create
+ new_comment GET    /comments/new(.:format)      comments#new
+edit_comment GET    /comments/:id/edit(.:format) comments#edit
+     comment GET    /comments/:id(.:format)      comments#show
+             PATCH  /comments/:id(.:format)      comments#update
+             PUT    /comments/:id(.:format)      comments#update
+             DELETE /comments/:id(.:format)      comments#destroy
+       posts GET    /posts(.:format)             posts#index
+             POST   /posts(.:format)             posts#create
+    new_post GET    /posts/new(.:format)         posts#new
+   edit_post GET    /posts/:id/edit(.:format)    posts#edit
+        post GET    /posts/:id(.:format)         posts#show
+             PATCH  /posts/:id(.:format)         posts#update
+             PUT    /posts/:id(.:format)         posts#update
+             DELETE /posts/:id(.:format)         posts#destroy
+       users GET    /users(.:format)             users#index
+             POST   /users(.:format)             users#create
+    new_user GET    /users/new(.:format)         users#new
+   edit_user GET    /users/:id/edit(.:format)    users#edit
+        user GET    /users/:id(.:format)         users#show
+             PATCH  /users/:id(.:format)         users#update
+             PUT    /users/:id(.:format)         users#update
+             DELETE /users/:id(.:format)         users#destroy
+        root GET    /                            sessions#new
