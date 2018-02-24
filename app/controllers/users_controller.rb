@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts.order("created_at").last(10).reverse
+    #@posts = @user.posts.order("created_at").last(10).reverse
   end
 
   def edit
