@@ -1,8 +1,58 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Edit your account</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+		<h2 class="text-center">Create Account</h2>
+		<%= form_with model: @user, local: true do |f| %>
+			<div class="form-group">
+				<%= f.email_field :email, placeholder: 'Email', class: 'form-control' %>
+			</div>
+			<div class="form-group">
+				<%= f.text_field :bio, placeholder: 'Bio', class: 'form-control' %>
+			</div>
+			<div class="form-group">
+				<%= f.text_field :profile_picture, placeholder: 'Profile Picture', class: 'form-control' %>
+			</div>
+			<div class="form-group">
+				<%= f.text_field :background_picture, placeholder: 'Background Picture', class: 'form-control' %>
+			</div>
+
+			<div class="form-group">
+				<%= f.password_field :password, placeholder: 'Password', class: 'form-control' %>
+			</div> 
+			<div class="form-group">
+				<%= f.text_field :first_name, placeholder: "First Name", class: 'form-control' %>		
+			</div> 
+			<div class="form-group">
+				<%= f.text_field :last_name, placeholder: "Last Name", class: 'form-control' %>		
+			</div> 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			<%= f.submit class: 'btn btn-primary' %>
+		<% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="card" style="width: 18rem;">
   <img class="card-img-top" src= <%= @user.profile_picture %>  alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <%= link_to "Edit Profile", edit_user_path(@user) %>
+    <h5 class="card-title"> <%= @user.first_name %> <%= @user.last_name %> </h5>
+    <p class="card-text"> <%= @user.username %> </p>
+    <p class="card-text"> <%= @user.bio %> </p>
+		<!-- Button trigger modal -->
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+		  Edit
+		</button>
   </div>
 </div>

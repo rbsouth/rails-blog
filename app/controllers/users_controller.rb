@@ -14,6 +14,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    p params
     #@posts = @user.posts.order("created_at").last(10).reverse
   end
 
@@ -35,6 +36,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :name)
+    params.require(:user).permit(:email, :password, :first_name, :last_name, :profile_picture, :background_picture, :bio)
   end
 end
