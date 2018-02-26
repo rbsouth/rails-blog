@@ -9,6 +9,35 @@
   </head>
 
   <body>
+
+  	 <nav class="navbar sticky-top navbar-dark bg-dark">
+      <div class="navbar-nav">
+        <form class="form-inline" method="POST" action="/search">
+          <a class="navbar-brand nav-inline" href="/home">
+            Home
+          </a>
+          <!-- <div>
+            <input id="search" class="form-control mr-sm-2 d-block" type="search" placeholder="Search" aria-label="Search" name="search">
+            <div id="results"></div>
+          </div> -->
+        </form>
+      </div>
+      <div class="form-inline justify-content-end">
+        <% if user_signed_in? %>
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+             <%= current_user.username %>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to "Profile", user_path(current_user.id), class: "nav-item nav-link" %>
+              <%= link_to "Sign Out", logout_path, method: :delete, class: "nav-item nav-link" %>
+            </div>
+          </div>
+        <% else %>
+          <a class="nav-item nav-link" href="/">Sign In</a>
+        <% end %>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
