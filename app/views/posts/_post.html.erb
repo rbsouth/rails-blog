@@ -1,0 +1,16 @@
+<div class="post">
+
+<div class="card text-center">
+  <div class="card-header">
+    <%= post.caption %> 
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"> </h5>
+    <p class="card-text"> <%= post.content %> </p>
+    <%= link_to "Contribute", post, class: "btn btn-success" %>
+  </div>
+  <div class="card-footer text-muted">
+    by <%= post.user.username %>
+  </div>
+</div>
+			<%= link_to "Delete Post", post_path(post.id), method: :delete %>
