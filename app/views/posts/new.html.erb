@@ -1,2 +1,7 @@
 <h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<%= form_with model: @post, local: true do |f| %>
+	<%= f.text_field :caption, placeholder: 'What are you building?' %>
+	<%= f.text_field :picture, placeholder: 'Add a Picture' %>
+	<%= f.text_field :content, placeholder: "What's your plan?" %>
+	<%= f.submit %>
+<% end %>

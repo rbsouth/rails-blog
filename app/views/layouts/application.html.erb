@@ -13,19 +13,17 @@
   	 <nav class="navbar sticky-top navbar-dark bg-dark">
       <div class="navbar-nav">
         <form class="form-inline" method="POST" action="/search">
-          <a class="navbar-brand nav-inline" href="/home">
-            Home
-          </a>
+          <%= link_to "Home", posts_path, class: "navbar-brand nav-inline" %>
           <!-- <div>
             <input id="search" class="form-control mr-sm-2 d-block" type="search" placeholder="Search" aria-label="Search" name="search">
             <div id="results"></div>
           </div> -->
         </form>
       </div>
-      <div class="form-inline justify-content-end">
+      <!-- <div class="justify-content-end"> -->
         <% if user_signed_in? %>
           <div class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
              <%= current_user.username %>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -36,7 +34,7 @@
         <% else %>
           <a class="nav-item nav-link" href="/">Sign In</a>
         <% end %>
-      </div>
+      <!-- </div> -->
     </nav>
     <%= yield %>
   </body>
