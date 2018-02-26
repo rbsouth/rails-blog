@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  layout "sessions_layout"
    def new
   end
   
@@ -6,7 +7,7 @@ class SessionsController < ApplicationController
   	@user = User.where(email: params[:email]).first
   	if @user && @user.password == params[:password]
   		session[:user_id] = @user.id
-  		redirect_to @user
+  		redirect_to login_path
   	else
       flash[:alert] = "Email or Password incorrect"
   		render :new
