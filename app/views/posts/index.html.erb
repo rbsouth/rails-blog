@@ -1,11 +1,12 @@
 <h1>Recent Posts</h1>
 <%= link_to "New Post", new_post_path %>
 <div class="posts">
-	<%= @posts.each do |post| %>
+	<% @posts.each do |post| %>
 		<div class="post">
-			<%= post.user.username %>
-			<%= post.content %>
-			<%= post.caption %>
+			<h4> <%= post.user.username %> Posted: </h4>
+			<p> <%= post.content %> </p>	
+			<p> <%= post.caption %> </p>
+			<%= link_to "Delete Post", post_path(post.id), method: :delete %>
 		</div>
 	<% end %>
 </div>
