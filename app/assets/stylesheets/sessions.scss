@@ -2,8 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $basic: 10px;
+$med: 50px;
+
+.mt10{
+	margin-top: 10px;
+}
 
 body{
+	color: white !important;
+}
+
+i{
 }
 
 #login-wrapper{
@@ -11,5 +20,6 @@ body{
 
 }
 .login-button{
-	margin-top: $basic;
+	@extend .mt10;
 }
+
