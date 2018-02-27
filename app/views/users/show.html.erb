@@ -9,7 +9,7 @@
         </button>
       </div>
       <div class="modal-body">
-			<%= render 'form', edit: true %>
+  			<%= render 'form' %>
       </div>
     </div>
   </div>
@@ -23,9 +23,9 @@
     <p class="card-text"> <%= @user.bio %> </p>
 		<!-- Button trigger modal -->
 		<% if @user == current_user %>
-		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAccount">
-		  Edit
-		</button>
+  		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAccount">
+  		  Edit
+  		</button>
 		<% end %>
   </div>
 </div>
@@ -35,7 +35,4 @@
       <%= render @posts, all: true %>
     </div>
   </div>
-</div>
-<div class="comments">
-<%= render @comments %>
 </div>

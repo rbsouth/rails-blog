@@ -2,14 +2,19 @@
 <div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-body">
-        <%= render 'form', model: Comment.new, post: false %>
+    	<div class="modal-header">
+        <h5 class="modal-title">Leave a comment</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
+      <div class="modal-body">
+        <%= render 'form', model: Comment.new%>
       </div>
     </div>
   </div>
 </div>
 <%= render @post, all: false %>
 <div class="comments">
-<%= render @comments %>
+	<%= render @comments %>
 </div>
