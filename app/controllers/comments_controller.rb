@@ -23,13 +23,16 @@ class CommentsController < ApplicationController
   end
 
   def update
-    @comment = current_user.comments.find(params[:id])
+    @comment = Comment.find(params[:id])
     @comment.update_attributes(comment_params)
     redirect_to @comment.post
   end
 
   def destroy
+    @comment = Comment.find(params[:id])
+    @post = @comment.post
     current_user.comments.find(params[:id]).destroy
+    redirect_to @post
   end
 
   private
