@@ -1,5 +1,15 @@
-<h1>Posts#show</h1>
+<!-- Modal -->
+<div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <%= render 'form', model: Comment.new, post: false %>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
 <%= render @post, all: false %>
 <div class="comments">
-	<%= render @comments %>
+<%= render @comments %>
 </div>
