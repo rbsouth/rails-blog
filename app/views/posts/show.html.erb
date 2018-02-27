@@ -1,2 +1,5 @@
 <h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<%= render @post, all: false %>
+<div class="comments">
+	<%= render @comments %>
+</div>

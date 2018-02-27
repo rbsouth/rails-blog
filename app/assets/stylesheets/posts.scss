@@ -9,13 +9,6 @@ $lg: 100px;
  margin: $med;
 }
 
-.post{
-}
-
-.card-header{
-	border-bottom: 1px solid #00000030;
-}
-
-.card-footer{
-	border-top: 1px solid #00000030;
+.card, .card-footer{
+	background-color: #7e8cf31f !important;
 }

@@ -7,10 +7,19 @@
   <div class="card-body">
     <h5 class="card-title"> </h5>
     <p class="card-text"> <%= post.content %> </p>
-    <%= link_to "Contribute", post, class: "btn btn-success" %>
+    <% if all %>
+      <%= link_to "Contribute", post, class: "btn btn-primary" %>
+    <% else %>
+      <%= link_to "Leave a Comment", new_comment_path, class: "btn btn-primary" %>
+    <% end %>
   </div>
   <div class="card-footer text-muted">
+    <% if current_user %>
+      by You
+      <%= link_to "Delete Post", post_path(post.id), method: :delete %>
+			<%= link_to "Edit Post", edit_post_path(post.id) %>
+      <% else %>
     by <%= post.user.username %>
+    <% end %>
   </div>
 </div>
-			<%= link_to "Delete Post", post_path(post.id), method: :delete %>
