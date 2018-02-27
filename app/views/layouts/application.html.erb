@@ -23,11 +23,10 @@
         <%= link_to image_tag("home.png", class: "home") , posts_path  %>
       </div>
       <div class="col offset-10">
-       <!--   type="button" id="ex2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  -->
         <%= image_tag "downarrow.png", class: "dropdown-toggle arrow", id: "ex2", data: {toggle: 'dropdown'} %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="ex2">
           <% if user_signed_in? %>
-            <%= link_to current_user.username "Profile", user_path(current_user.id), class: "dropdown-item" %>
+            <%= link_to current_user.username, user_path(current_user.id), class: "dropdown-item" %>
             <%= link_to "Sign Out", logout_path, method: :delete, class: "dropdown-item" %>
           <% else %>
             <%= link_to "Sign In", login_path %>
