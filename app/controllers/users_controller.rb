@@ -14,6 +14,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @posts = @user.posts.all.order("created_at").last(10).reverse
+    @comments = @user.comments.all
     p params
     #@posts = @user.posts.order("created_at").last(10).reverse
   end

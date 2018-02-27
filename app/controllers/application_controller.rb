@@ -9,5 +9,6 @@ class ApplicationController < ActionController::Base
   def user_signed_in?
   	!session[:user_id].nil?
   end
+
   helper_method :current_user, :user_signed_in?
 end

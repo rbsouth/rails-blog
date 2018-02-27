@@ -1,7 +1,6 @@
-<h1>Posts#new</h1>
-<%= form_with model: @post, local: true do |f| %>
-	<%= f.text_field :caption, placeholder: 'What are you building?' %>
-	<%= f.text_field :picture, placeholder: 'Add a Picture' %>
-	<%= f.text_field :content, placeholder: "What's your plan?" %>
-	<%= f.submit %>
-<% end %>
+
+<div class="row">
+		<div class="col-8 offset-2">
+			<%= render 'form', model: Post.new, post: true %>
+		</div>
+</div>
