@@ -25,8 +25,14 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-    @user.update_attributes(user_params)
+    @user = current_user
+    updates = {}
+    user_params.each do |col,val|
+      if !val.blank?
+        updates[col.to_sym] = val 
+      end
+    end
+    @user.update_attributes(updates)
     redirect_to @user
   end
 
