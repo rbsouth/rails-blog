@@ -15,7 +15,7 @@
           Leave a Comment
         </button>
       <% else %>
-        <%= link_to "Leave a Comment", root_path, class: 'btn btn-primary' %>
+        <%= link_to "Leave a Comment", root_path(redirect_url: request.original_url), class: 'btn btn-primary' %>
       <% end %>
     <% end %>
   </div>
