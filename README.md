@@ -1,24 +1,31 @@
-# README
+# Rails Blog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a blog made with rails in order to properly display my awesomeness
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+You will want to make an account if you want to be awesome. be sure to contribite to the existing posts. they are the BEST posts, all my Dev friends agree with me there are no better posts. Don't worry about security, I will build a great, great firewall on our system border, and I will have Mexico pay for that firewall. Mark my words.
 
-* System dependencies
+### Prerequisites
 
-* Configuration
+you'll need this function
 
-* Database creation
+```
+$(function(){
+	function(name, desctiption){
+		let myName = "Your name"
+		let requiremnt = "should pay Reid lots of money to make awesome stuff."
+		return myName + " " + requirement
+	}
+});
+```
 
-* Database initialization
 
-* How to run the test suite
+## Built With
 
-* Services (job queues, cache servers, search engines, etc.)
+* [MD Bootstrap](https://fezvrasta.github.io/bootstrap-material-design/) - The web framework used
 
-* Deployment instructions
+## Acknowledgments
 
-* ...
+* My Mom
+
