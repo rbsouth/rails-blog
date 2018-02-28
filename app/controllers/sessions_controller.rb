@@ -4,10 +4,9 @@ class SessionsController < ApplicationController
   end
   
   def create
-  	@user = User.where(email: params[:email]).first
-  	if @user && @user.password == params[:password]
+  	@user = User.check_login(params[:email], params[:password])
+  	if @user
   		session[:user_id] = @user.id
-      p params
       if params[:redirect_url] != "" || nil
         redirect_to params[:redirect_url]
       else

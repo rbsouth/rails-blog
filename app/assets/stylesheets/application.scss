@@ -12,6 +12,7 @@
  *
  */
  @import "material";
+ @import 'parsley';
  @import "sessions";
  @import "users";
  @import "posts";
@@ -33,6 +34,7 @@ body{
 	position: sticky;
 	top: 0;
 	padding-top: 35px;
+	z-index: 5;
 }
 
 .arrow{

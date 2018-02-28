@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery3
+//= require parsley
 //= require popper
 //= require bootstrap
 //= require material
