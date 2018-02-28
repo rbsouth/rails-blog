@@ -9,20 +9,15 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    Pony.mail({
-      :to => user_params[:email],
-      :header => 'confirm yo'
-      # :body => 'http://localhost:3000/@userid'
-    })
     redirect_to login_path
   end
 
   def show
+    puts '----------PARMAS----------'
+    p params[:user]
     @user = User.find(params[:id])
     @posts = @user.posts.all.order("created_at").last(10).reverse
     @comments = @user.comments.all
-    p params
-    #@posts = @user.posts.order("created_at").last(10).reverse
   end
 
   def edit

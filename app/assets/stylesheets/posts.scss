@@ -28,8 +28,9 @@ $lg: 100px;
 
 .post-button {
   position: relative;
+  z-index: 2;
   appearance: none;
-  background: #01938740 !important;
+  background: #223dfd7a !important;
   padding: 1em 2em;
   border: none;
   color: white;
@@ -38,10 +39,12 @@ $lg: 100px;
   outline: none;
   overflow: hidden;
   border-radius: 100px;
+
   span {
     position: relative;
     pointer-events: none;
   }
+
   &::before {
     --size: 0;
     content: '';
@@ -50,10 +53,11 @@ $lg: 100px;
     top: var(--y);
     width: var(--size);
     height: var(--size);
-    background: radial-gradient(circle closest-side, #4405f7, transparent);
+    background: radial-gradient(circle closest-side, #f54336, transparent);
     transform: translate(-50%, -50%);
     transition: width .2s ease, height .2s ease;
   }
+  
   &:hover::before {
     --size: 200px;
   }
