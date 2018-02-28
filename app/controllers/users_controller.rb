@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     Pony.mail({
       :to => user_params[:email],
       :header => 'confirm yo'
-      :body => 'http://localhost:3000/'user_params[:id]
+      # :body => 'http://localhost:3000/@userid'
     })
     redirect_to login_path
   end

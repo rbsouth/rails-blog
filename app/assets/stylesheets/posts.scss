@@ -10,7 +10,7 @@ $lg: 100px;
 }
 
 .card, .card-footer{
-	background-color: #7e8cf31f !important;
+	background-color: #00000091 !important;
 	color: white;
 }
 
@@ -29,7 +29,7 @@ $lg: 100px;
 .post-button {
   position: relative;
   appearance: none;
-  background: #f72359 !important;
+  background: #01938740 !important;
   padding: 1em 2em;
   border: none;
   color: white;
@@ -40,6 +40,7 @@ $lg: 100px;
   border-radius: 100px;
   span {
     position: relative;
+    pointer-events: none;
   }
   &::before {
     --size: 0;
@@ -54,6 +55,6 @@ $lg: 100px;
     transition: width .2s ease, height .2s ease;
   }
   &:hover::before {
-    --size: 400px;
+    --size: 200px;
   }
 }
