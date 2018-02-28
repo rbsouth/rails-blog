@@ -1,31 +1,41 @@
 <div class="post">
 
-<div class="card text-center">
-  <div class="card-header">
-    <%= post.caption %> 
-  </div>
-  <div class="card-body">
-    <h5 class="card-title"> </h5>
-    <p class="card-text"> <%= post.content %> </p>
-    <% if all %>
-      <%= link_to "Contribute", post, class: "btn btn-primary" %>
-    <% else %>
-      <% if user_signed_in? %>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#commentModal">
-          Leave a Comment
-        </button>
+  <div class="card text-center">
+    <div class="card-header">
+      <h4> <%= post.caption %> </h4>
+    </div>
+    <div class="card-body">
+      <p class="card-text"> <%= post.content %> </p>
+      <% if all %>
+        <%= link_to "Contribute", post, class: "btn btn-primary" %>
       <% else %>
-        <%= link_to "Leave a Comment", root_path(redirect_url: request.original_url), class: 'btn btn-primary' %>
+        <% if user_signed_in? %>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#commentModal">
+            Leave a Comment
+          </button>
+        <% else %>
+          <%= link_to "Leave a Comment", root_path(redirect_url: request.original_url), class: 'btn btn-primary' %>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
-  <div class="card-footer text-muted">
-    <% if current_user == post.user %>
-      by You
-			<%= link_to "Edit Post", edit_post_path(post.id), class: "btn btn-primary" %>
-      <%= link_to "Delete Post", post_path(post.id), method: :delete, class: "btn btn-danger" %>
-    <% else %>
-      by @<%= post.user.username %>
-    <% end %>
+    </div>
+    <div class="card-footer text-muted">
+      <% if current_user == post.user %>
+        by You
+  			<%= link_to "Edit Post", edit_post_path(post.id), class: "btn btn-primary" %>
+        <%= link_to "Delete Post", post_path(post.id), method: :delete, class: "btn btn-danger" %>
+      <% else %>
+        by <%= link_to post.user.username, user_path(post.user.id) %>
+      <% end %>
+      <% if all %>
+        <h5 class="white-text">
+          <%= post.comments.count %>
+          <% if post.comments.count == 1 %>
+            <%= link_to "Comment", post, class: "white-text" %>
+          <% else %>
+            <%= link_to "Comments", post, class: "white-text" %>
+          <% end %>
+        </h5>
+      <% end %>
+    </div>
   </div>
 </div>

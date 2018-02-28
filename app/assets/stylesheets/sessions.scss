@@ -10,9 +10,13 @@ $med: 50px;
 
 #login-wrapper{
 	padding: $basic;
-
+	color: white;
 }
+
 .login-button{
 	@extend .mt10;
 }
 
+label, input {
+	color: white;
+}

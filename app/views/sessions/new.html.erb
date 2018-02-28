@@ -11,7 +11,7 @@
 				<%= f.label :password %>
 				<%= f.password_field :password, placeholder: raw("&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"), autofocus: true, class: 'form-control' %>
 				<%= f.hidden_field :redirect_url, value: params[:redirect_url] %>
-				<%= f.submit class: 'btn btn-primary btn-raised login-button' %>
+				<%= f.submit "Go", class: 'btn btn-primary btn-raised login-button' %>
 			<% end %>
 			<%= link_to "Create Account", new_user_path %>
 		</div>

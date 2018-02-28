@@ -1,11 +1,20 @@
-<h1>Recent Posts</h1>
-<%= link_to "New Post", new_post_path %>
-
+<div class="text-align-center">
+	<h1 class="white-text">Recent Posts</h1>
+	<% if user_signed_in? %>
+		
+		<%= link_to ("<button class='post-button'><span> New Post </span></button>").html_safe, new_post_path %>	
+		
+	<% else %>
+		<%= link_to ("<button class='post-button'><span> New Post </span></button>").html_safe, root_path(redirect_url: request.original_url) %>
+	<% end %>
+</div>
 
 <div class="row">
-	<div class="col-8 offset-2">
+	<div class="col-md-2"></div>
+	<div class="col-md-8 col-12">
 		<div class="posts">
 			<%= render @posts, all: true %>
 		</div>
 	</div>
 </div>
+
