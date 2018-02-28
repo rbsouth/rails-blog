@@ -9,6 +9,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
+    Pony.mail({
+      :to => user_params[:email],
+      :header => 'confirm yo'
+      :body => 'http://localhost:3000/'user_params[:id]
+    })
     redirect_to login_path
   end
 
@@ -38,6 +43,7 @@ class UsersController < ApplicationController
 
   def destroy
     User.find(params[:id]).destroy
+    session[:user_id] = nil
     redirect_to login_path
   end
 
