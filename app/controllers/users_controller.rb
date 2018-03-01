@@ -8,13 +8,17 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
-    redirect_to login_path
+    @user = User.new(user_params)
+    if @user.save
+      session[:user_id] = @user.id
+      flash[:notice] = "Account Created"
+      redirect_to @user
+    else
+      render :new
+    end
   end
 
   def show
-    puts '----------PARMAS----------'
-    p params[:user]
     @user = User.find(params[:id])
     @posts = @user.posts.all.order("created_at").last(10).reverse
     @comments = @user.comments.all
