@@ -16,10 +16,10 @@
 </div>
 
 <div class="card user-info-card" style="width: 18rem;">
-  <% if @user.profile_picture != nil || '' %>
-    <img class="card-img-top" src= "<%= @user.profile_picture %>"  alt="Error">
+  <% if @user.profile_picture == nil || '' %>
+    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoHJ8UPczwkdjEgvCYSQ4TKRsCe4orkTg35k1vNLKlSIknhPcV" alt="Card image cap">  
   <% else %>
-    <img class="card-img-top" src="http://efekt-dieta.info/cdn/images/random-picture/random-picture-05.jpg" alt="Card image cap">  
+    <img class="card-img-top" src= "<%= @user.profile_picture %>"  alt="Error">
   <% end %>
   <div class="card-body">
     <h5 class="card-title"> <%= @user.first_name %> <%= @user.last_name %> </h5>
