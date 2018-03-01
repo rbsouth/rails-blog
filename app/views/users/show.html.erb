@@ -16,8 +16,8 @@
 </div>
 
 <div class="card user-info-card" style="width: 18rem;">
-  <% if @user.profile_picture != nil %>
-    <img class="card-img-top" src= "<%= @user.profile_picture %>"  alt="Error">  
+  <% if @user.profile_picture != nil || '' %>
+    <img class="card-img-top" src= "<%= @user.profile_picture %>"  alt="Error">
   <% else %>
     <img class="card-img-top" src="http://efekt-dieta.info/cdn/images/random-picture/random-picture-05.jpg" alt="Card image cap">  
   <% end %>
@@ -33,7 +33,7 @@
 		<% end %>
   </div>
 </div>
-<div class="row">
+<div class="row z-index-minus-1">
   <div class="col-md-4"></div>
   <div class="col-md-8 col-12">
     <div class="posts">

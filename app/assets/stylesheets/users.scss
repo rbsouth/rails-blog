@@ -14,5 +14,10 @@ $mid: 500px;
 
 .user-info-card{
 	position: fixed !important;
+	z-index: -1;
 	display: block;
+}
+
+z-index-minus-1{
+	z-index: -1;
 }
